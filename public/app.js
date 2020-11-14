@@ -40,13 +40,13 @@ function deleteCheck(e){
     //Delete
     if(item.classList[0]=='trash-btn'){
         const todo=item.parentElement;
-        //Animation
+        //Animation for deletion
         todo.classList.add("fall");
         todo.addEventListener('transitionend',function(){
             todo.remove();
         });
     }
-    //Check
+    //Check and strike out completed tasks
     if(item.classList[0]=='complete-btn'){
         const todo=item.parentElement
         todo.classList.toggle("completed");
