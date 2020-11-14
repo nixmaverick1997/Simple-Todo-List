@@ -1,33 +1,52 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;  
 }
 body{
-    background-image: url("https://hbr.org/resources/images/article_assets/2017/09/oct17-04-623455200.png");
-    color: white;
-    font-family:'Indie Flower', sans-serif; /*font for the web app*/
+    color: black;
+     /*font for the web app*/
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: bottom;
+    background-size: 30%;
+    background-position-y: 5cm;
+    background-position-x: 0.5cm;
 }
 header{
-    font-size: 1.5rem;
+    color: rgb(108,99,255);
+    font-size: 2.5rem;
+    font-family: 'Big Shoulders Inline Text', cursive;
     padding: 1rem;
+    text-align: center;
 }
 form{
-   min-height: 15vh; 
+   min-height: 30vh; 
    display: flex;
    justify-content: center;
    align-items: center;
 }
 form input, form button{
-    padding: 0.5rem;
+    padding: 0.7rem;
     font-size: 2rem;
     border: none;
     background-color: rgb(230, 240, 238);
 }
+form input{   
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+form input, .todo{
+    font-family: 'Courier Prime', monospace;
+}
 form button{
-    color:rgb(61, 0, 97);
-    background: rgb(255, 32, 188);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+form button{
+    color:white;
+    background: rgb(108,99,255);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -45,14 +64,16 @@ form button:hover{
     list-style: none;
 }
 .todo{
-    margin: 0.5rem;
-    background: white;
+    
+    margin: 1rem;
+    background: rgb(230, 240, 238);
     color: black;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 1s ease;
+    border-radius: 50px;
 }
 .todo li{
     flex: 1;
@@ -67,6 +88,8 @@ form button:hover{
 }
 .trash-btn{
     color: red;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
 }
 .complete-btn{
     color: green;
@@ -80,7 +103,7 @@ form button:hover{
     color: white;
 }
 .todo-item{
-    padding: 0rem 0.5rem;
+    padding: 0rem 0.7rem;
 }
 .fa-trash,.fa-check{
     pointer-events: none;
@@ -92,4 +115,18 @@ form button:hover{
 .fall{
     animation: backOutUp; /*deletion animation*/
     animation-duration: 2s;
+}
+#task-check,#task-content{
+    animation: color_change 4s alternate infinite;
+}
+@keyframes color_change {
+	from { fill:#CCCCCC; }
+	to {fill:#6C63FF; }
+}
+#task-complete-icon,#task-complete{
+    animation: color_complete 4s alternate infinite;
+}
+@keyframes color_complete {
+	from { fill:#6C63FF; }
+	to {fill:white; }
 }
